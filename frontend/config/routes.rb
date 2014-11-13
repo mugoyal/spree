@@ -1,5 +1,5 @@
 Spree::Core::Engine.add_routes do
-scope "(:locale)", :locale => /fr|de/ do
+scope "(:locale)", :locale => /fr/ do
   root :to => 'home#index'
 
   resources :products, :only => [:index, :show]
