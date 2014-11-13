@@ -1,5 +1,5 @@
 Spree::Core::Engine.add_routes do
-
+scope "(:locale)", :locale => /fr|de/ do
   root :to => 'home#index'
 
   resources :products, :only => [:index, :show]
@@ -34,4 +34,5 @@ Spree::Core::Engine.add_routes do
   get '/content/cvv', :to => 'content#cvv', :as => :cvv
   get '/content/*path', :to => 'content#show', :as => :content
   get '/cart_link', :to => 'store#cart_link', :as => :cart_link
+end
 end
